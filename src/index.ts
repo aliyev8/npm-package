@@ -1,3 +1,3 @@
-import MyCounter from "./components/App";
+import MobileHeader from "./component/MobileHeader";
 
-export { MyCounter };
+export { MobileHeader };

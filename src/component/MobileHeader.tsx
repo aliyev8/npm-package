@@ -1,22 +1,67 @@
 import React from "react";
 
 type Props = {
-  color: string;
-  background: string;
-  content: string;
+  logoELement?: React.ReactNode;
+  styles?: React.CSSProperties;
+  className?: string;
+  menuClassName?: string;
+  closeElement?: React.ReactNode;
+  menuElement: React.node;
+  isOpen?: boolean;
 };
 
 const MobileHeader = (props: Props) => {
+  const [scrollHeader, setScrollHeader] = React.useState(true);
+  const [lastScrollTop, setLastScrollTop] = React.useState(0);
+
+  const handleScroll = () => {
+    const currentScrollTop = window.scrollY;
+
+    if (currentScrollTop > lastScrollTop) {
+      currentScrollTop > 44 && setScrollHeader(false);
+    } else {
+      setScrollHeader(true);
+    }
+    setLastScrollTop(currentScrollTop);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
+  React.useEffect(() => {
+    if (props.isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [props.isOpen]);
+
   return (
     <div
+      className={`${props.className ? props.className : ""}`}
       style={{
-        background: props?.background,
-        color: props?.color,
-        width: "100%",
-        height: "100%",
+        ...props.styles,
+        transition: "all 0.5s ease-in-out",
+        height: scrollHeader ? "auto" : "auto",
+        transform: scrollHeader ? "translateY(0)" : "translateY(-66px)",
+        position: props.isOpen ? "relative" : "sticky",
+        top: 0,
       }}
     >
-      {props.content}
+      {props.logoELement && props.logoELement}
+      {props.closeElement && props.closeElement}
+      <div
+        style={{
+          transform: props.isOpen ? "translateX(0)" : "translateX(866px)",
+        }}
+        className={props.menuClassName}
+      >
+        {props.menuElement && props.menuElement}
+      </div>
     </div>
   );
 };

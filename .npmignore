@@ -1,0 +1,4 @@
+node_modules
+src
+dist/cjs/**/*.test.js
+dist/esm/**/*.test.js

@@ -1,6 +1,6 @@
 {
   "name": "rh8m",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -14,6 +14,14 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliyev8/rh8m.git"
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",

@@ -1,12 +1,17 @@
 {
   "name": "rh8m",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build:dev": "rollup -c --environment NODE_ENV:development",
     "build": "rollup -c --environment NODE_ENV:production"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "tag": "latest"
   },
   "keywords": [],
   "author": "",

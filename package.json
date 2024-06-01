@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aliyev8/rh8m.git"
+    "url": "git+https://github.com/aliyev8/npm-package.git"
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",

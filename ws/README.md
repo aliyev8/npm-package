@@ -24,6 +24,17 @@ import { MobileHeader } from "react-simple-mobile-header";
       />
 ```
 
+*To be visible only on small screens*
+```css
+.header {
+  display: flex;
+
+  @media only screen and (min-width: 601px) {
+    display: none;
+  }
+}
+```
+
 # Demo
 
 [Codesandbox](https://codesandbox.io/p/sandbox/react-simple-mobile-header-fdxhs4)

@@ -1,6 +1,6 @@
 {
   "name": "react-simple-mobile-header",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "test",
   "type": "module",
   "main": "dist/cjs/index.js",
